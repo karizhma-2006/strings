@@ -1,0 +1,44 @@
+https://www.geeksforgeeks.org/problems/reverse-a-string/1
+class Solution {
+  public:
+    string reverseString(string& s) {
+        // code here
+        string s1(s.length(),' ');
+        int k=s.length();
+        for(int i=0;i<s.length();i++)
+        {
+            s1[k-1]=s[i];
+            k--;
+        }
+        return s1;
+    }
+};
+
+
+class Solution {
+  public:
+    string reverseString(string& s) {
+        // code here
+        string result = "";
+        for(int i=s.size()-1;i>=0;i--){
+            result+=s[i];
+        }
+        return result;
+    }
+};
+
+
+class Solution {
+  public:
+    string reverseString(string& s) {
+        // code here
+        int left=0;
+        int right=s.length()-1;
+        while(left<=right){
+            swap(s[left],s[right]);
+            left++;
+            right--;
+        }
+        return s;
+    }
+};
