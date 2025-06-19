@@ -1,0 +1,47 @@
+#include <iostream>
+#include<cstring>
+using namespace std;
+int main() {
+   char b[10];
+   cin>>b;
+   for(int i=0;b[i]!='\0';i++)
+   {
+      b[i]=b[i]+32;
+   }
+  cout<<b;
+return 0;
+}
+
+
+#include <iostream>
+using namespace std;
+int main() {
+    char str[100];
+    cout << "Enter a string: ";
+    cin.getline(str, 100);  // reads input including spaces
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] >= 'A' && str[i] <= 'Z') {
+            str[i] = str[i] + 32;  // convert uppercase to lowercase
+        }
+    }
+    cout << "Lowercase: " << str << endl;
+    return 0;
+}
+
+#include <iostream>
+#include <cctype>  // for tolower()
+using namespace std;
+
+int main() {
+    char str[100];
+    cout << "Enter a string: ";
+    cin.getline(str, 100);
+
+    for (int i = 0; str[i] != '\0'; i++) {
+        str[i] = tolower(str[i]);  // converts to lowercase if it's uppercase
+    }
+
+    cout << "Lowercase: " << str << endl;
+    return 0;
+}
+
