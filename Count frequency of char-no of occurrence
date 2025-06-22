@@ -1,0 +1,21 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+int main() {
+    char a[] = "23452";
+    int freq[256] = {0};
+    // Count frequency
+    for (int i = 0; i < strlen(a); i++) {
+        freq[a[i]]++;
+    }
+    // Print frequency (once per character)
+    for (int i = 0; i < strlen(a); i++) {
+        if (freq[a[i]] != 0) {
+            cout << a[i] << " -> " << freq[a[i]] << endl;
+            freq[a[i]] = 0; // Set to 0 to avoid printing again
+        }
+    }
+    return 0;
+}
