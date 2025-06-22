@@ -1,4 +1,6 @@
 https://www.geeksforgeeks.org/problems/reverse-a-string/1
+
+//1.using string and extra space(temp string )
 class Solution {
   public:
     string reverseString(string& s) {
@@ -14,7 +16,7 @@ class Solution {
     }
 };
 
-
+//2.Using char[] and temp array
 class Solution {
   public:
     string reverseString(string& s) {
@@ -27,7 +29,7 @@ class Solution {
     }
 };
 
-
+//optimized method
 class Solution {
   public:
     string reverseString(string& s) {
