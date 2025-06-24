@@ -1,0 +1,63 @@
+https://leetcode.com/problems/longest-common-prefix/
+//1.optimal-sort the array by lexicographycally
+class Solution {
+public:
+    string longestCommonPrefix(vector<string>& strs) {
+        sort(strs.begin(), strs.end());//sort the array lexicographycally
+        string first =strs[0];// strs.front();
+        string last = strs[strs.size()-1];//strs.back();
+        string res = "";
+
+        for (int i = 0; i < min(first.size(),last.size()); i++) {
+            if (first[i] == last[i])
+                res += first[i];
+            else
+                break;
+        }
+        return res;
+    }
+};
+class Solution {
+public:
+    string longestCommonPrefix(vector<string>& strs) {
+       sort(strs.begin(), strs.end());
+        string first =strs[0];// strs.front();
+        string last = strs[strs.size()-1];//strs.back();
+        int index=-1;
+        string res;
+        for (int i = 0; i < min(first.size(),last.size()); i++) {
+            if (first[i] != last[i])
+               break;
+            else
+                res+=first.substr(i,1);//res+=first[i] or see the notes u can find alternate method
+        }
+        return res;
+    }
+};
+
+2.brute force-sort the array by the each string's length
+class Solution {
+public:
+    string longestCommonPrefix(vector<string>& strs) {
+        sort(strs.begin(),strs.end());//here I don't know to sort by lengths
+        string s="";
+        int n=strs[0].length();
+        for(int i=0;i<n;i++)
+        {
+            int flag=1;
+            for(int j=0;j<strs.size();j++)
+            {
+                if(strs[j][i]!=strs[0][i])
+                {
+                    flag=0;
+                    break;
+                }
+            }
+            if(flag==1)
+                s+=strs[0][i];
+            else
+                break;
+        }
+        return s;
+    }
+};
